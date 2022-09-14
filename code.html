@@ -89,18 +89,88 @@
           <div class="col-12 col-md-8">
             <pre class="line-numbers">
               <code class="language-javascript">
-                function HelloWorld() {
-                  alert("Hello World!");
-                }
+                //Get the string from the input on the page
+function getString() {
+  //First clear the content of the page
+  document.getElementById("results").innerHTML = "";
+  //Add the incisible class to results so that it gets hidden at the start
+  document.getElementById("results").classList.add("invisible");
+
+  //Declare a variable to hold the string
+  let stringInput = document.getElementById("stringInput").value;
+
+  //Declare a variable to hold the reversed string
+  let reversedString = revString(stringInput);
+
+  //Call displayString to display the string
+  displayString(reversedString);
+}
+
+//Reverse the string
+function revString(stringInput) {
+  //Declare an empty variable as a string
+  let reversedString = [];
+
+  //For-loop through the string from the end
+  for (let i = stringInput.length - 1; i >= 0; i--) {
+    //Concatenate the result of each iteration to the empty array
+    reversedString += stringInput[i];
+  }
+  //Return the string for display
+  return reversedString;
+}
+
+//Display the reversed string on the page
+function displayString(reversedString) {
+  //First remove the invisible class from results to show the results
+  document.getElementById("results").classList.remove("invisible");
+  //Inject the results on the page
+  document.getElementById(
+    "results"
+  ).innerHTML = `Your string reversed is: ${reversedString}`;
+}
+
               </code>
             </pre>
           </div>
           <div class="col-12 col-md-4">
-            <p>The Code is structured in one function.</p>
-            <h5>HelloWorld()</h5>
+            <p>The Code is structured in three functions.</p>
+            <h5>getString()</h5>
             <p>
-              HelloWorld() is a function that displays an alert with a message
-              of "Hello World!"
+              The function getString() first makes sure to clear the page of
+              data by clearing the "results" ID and it also injects the
+              "invisible" class to that same ID, in order to hide it (for
+              now).<br /><br />
+              Next we get the input from the "stringInput" ID on the page and
+              store it in a variable which we also call stringInput.<br /><br />We
+              pass this stringInput to the function revString() and store the
+              results of this function in the variable reversedString.<br /><br />Finally
+              we pass the variable reversedString to the function
+              displayString().
+            </p>
+            <h5>revString()</h5>
+            <p>
+              The first thing we do inside the function revString() is to make
+              sure that we declare an empty array. We call it reversedString
+              here.<br /><br />Next we run the stringInput which was passed to
+              us, through a for-loop. In this loop we will use the length of the
+              stringInput - 1 in order to start at the end. This way we can also
+              ensure that it will work no matter how many characters the string
+              contains. We run the loop for as long as the index is greater than
+              or equal to 0, and for all of those iterations, we decrement by 1
+              each time so that we get the data from the next index going
+              backwards. Each time the loop completes an iteration, it will
+              concatenate the resulting data from each index to the variable
+              reversedString.<br /><br />Finally when the loop has finished we
+              return the variable reversedString.
+            </p>
+            <h5>displayString()</h5>
+            <p>
+              The function displayString() is the simplest of the three. First
+              it makes sure to remove the "invisible" class from the "results"
+              ID, in order to display the data on the page.<br /><br />Next it
+              injects the reversed string into page at the "results" ID using
+              template literals.
             </p>
           </div>
         </div>
