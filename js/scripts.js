@@ -27,7 +27,7 @@ function revString(stringInput) {
 }
 
 //Display the reversed string on the page
-function revString(reversedString) {
+function displayString(reversedString) {
   document.getElementById("results").classList.remove("invisible");
 
   document.getElementById(
