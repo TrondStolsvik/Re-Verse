@@ -78,7 +78,55 @@
     </nav>
     <!-- MAIN Section -->
     <main class="flex-shrink-0">
-      <div class="container"></div>
+      <div class="container">
+        <div class="row mt-3">
+          <div class="col-12 col-md-5">
+            <h1 class="border-1 border-bottom border-dark">
+              Re-Verse: A Coding Project
+            </h1>
+            <h4 class="lead">
+              Not happy with your verse? RE-verse it! Re-Verse is a projects
+              about reversing a string input and spelling it backwards. In other
+              words, you could say you're RE-organizing your inputs.
+            </h4>
+            <h2 class="border-1 border-bottom border-dark mt-5">
+              Instructions
+            </h2>
+            <p>
+              Input a string such as a word or sentence and click the button.
+              Watch as the string is re-versed and displayed with backward
+              spelling.
+            </p>
+          </div>
+          <div class="col-12 col-md-7">
+            <h5>Enter a word or sentence</h5>
+            <form class="row">
+              <div class="col-12">
+                <input
+                  id="stringInput"
+                  type="text"
+                  class="form-control"
+                  placeholder="Word or sentence"
+                  aria-label="Enter a word or sentence"
+                />
+              </div>
+              <div class="col-12 mt-2 d-flex justify-content-end">
+                <button id="btnSubmit" type="button" class="btn btn-primary">
+                  Re-Verse it!
+                </button>
+              </div>
+            </form>
+            <h3 class="border-1 border-bottom border-dark mt-5">Results</h3>
+            <div
+              id="results"
+              class="col-12 alert alert-primary invisible fade show"
+              role="alert"
+            >
+              <!-- Results go here -->
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- FOOTER Section -->
     <footer class="footer mt-auto py-3 bg-dark sticky-footer">
@@ -138,5 +186,8 @@
 
     <!-- Custom Scripts -->
     <script src="js/scripts.js"></script>
+    <script>
+      document.getElementById("btnSubmit").addEventListener("click", getString);
+    </script>
   </body>
 </html>
